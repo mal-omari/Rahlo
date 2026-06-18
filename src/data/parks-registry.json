@@ -1,0 +1,1032 @@
+{
+  "meta": {
+    "source": "https://reservations.ontarioparks.ca/api/maps?mapId=-2147483464",
+    "rootMapId": -2147483464,
+    "capturedDate": "2026-06-18",
+    "notes": "IDs are negative integers used by the CAMIS reservation platform. resourceLocationId is the park location ID used for /api/maps lookups. transactionLocationId is used for booking flows."
+  },
+  "regions": {
+    "algonquin": {
+      "name": "Algonquin",
+      "regionMapId": -2147483460,
+      "parks": [
+        {
+          "name": "Algonquin - Achray / Sand Lake Gate",
+          "slug": "algonquin-achray",
+          "resourceLocationId": -2147483647,
+          "transactionLocationId": -2147483647,
+          "mapId": -2147483644,
+          "priority": true
+        },
+        {
+          "name": "Algonquin Backcountry",
+          "slug": "algonquin-backcountry",
+          "resourceLocationId": -2147483644,
+          "transactionLocationId": -2147483644,
+          "mapId": -2147483636,
+          "priority": false
+        },
+        {
+          "name": "Algonquin - Brent",
+          "slug": "algonquin-brent",
+          "resourceLocationId": -2147483631,
+          "transactionLocationId": -2147483630,
+          "mapId": -2147483573,
+          "priority": true
+        },
+        {
+          "name": "Algonquin - Canisbay Lake",
+          "slug": "algonquin-canisbay-lake",
+          "resourceLocationId": -2147483627,
+          "transactionLocationId": -2147483625,
+          "mapId": -2147483562,
+          "priority": true
+        },
+        {
+          "name": "Algonquin - East Beach",
+          "slug": "algonquin-east-beach",
+          "resourceLocationId": -2147483645,
+          "transactionLocationId": -2147483645,
+          "mapId": -2147483013,
+          "priority": false
+        },
+        {
+          "name": "Algonquin - Hwy 60 Corridor",
+          "slug": "algonquin-hwy60",
+          "resourceLocationId": -2147483470,
+          "transactionLocationId": -2147483504,
+          "mapId": -2147483053,
+          "priority": true
+        },
+        {
+          "name": "Algonquin - Kingscote",
+          "slug": "algonquin-kingscote",
+          "resourceLocationId": -2147483471,
+          "transactionLocationId": -2147483503,
+          "mapId": -2147483054,
+          "priority": false
+        },
+        {
+          "name": "Algonquin - Kiosk",
+          "slug": "algonquin-kiosk",
+          "resourceLocationId": -2147483599,
+          "transactionLocationId": -2147483595,
+          "mapId": -2147483415,
+          "priority": false
+        },
+        {
+          "name": "Algonquin - Lake of Two Rivers",
+          "slug": "algonquin-lake-of-two-rivers",
+          "resourceLocationId": -2147483596,
+          "transactionLocationId": -2147483592,
+          "mapId": -2147483414,
+          "priority": true
+        },
+        {
+          "name": "Algonquin - Mew Lake",
+          "slug": "algonquin-mew-lake",
+          "resourceLocationId": -2147483585,
+          "transactionLocationId": -2147483581,
+          "mapId": -2147483378,
+          "priority": true
+        },
+        {
+          "name": "Algonquin - Pog Lake & Kearney Lake",
+          "slug": "algonquin-pog-lake",
+          "resourceLocationId": -2147483567,
+          "transactionLocationId": -2147483563,
+          "mapId": -2147483317,
+          "priority": true
+        },
+        {
+          "name": "Algonquin - Rock Lake & Raccoon Lake",
+          "slug": "algonquin-rock-lake",
+          "resourceLocationId": -2147483555,
+          "transactionLocationId": -2147483551,
+          "mapId": -2147483264,
+          "priority": false
+        },
+        {
+          "name": "Algonquin - Shall Lake",
+          "slug": "algonquin-shall-lake",
+          "resourceLocationId": -2147483514,
+          "transactionLocationId": -2147483512,
+          "mapId": -2147483049,
+          "priority": false
+        },
+        {
+          "name": "Algonquin - Basin Lake",
+          "slug": "algonquin-basin-lake",
+          "resourceLocationId": -2147483441,
+          "transactionLocationId": -2147483482,
+          "mapId": -2147482995,
+          "priority": false
+        },
+        {
+          "name": "Algonquin - Tea Lake",
+          "slug": "algonquin-tea-lake",
+          "resourceLocationId": -2147483533,
+          "transactionLocationId": -2147483529,
+          "mapId": -2147483171,
+          "priority": false
+        },
+        {
+          "name": "Algonquin - Tim River",
+          "slug": "algonquin-tim-river",
+          "resourceLocationId": -2147483591,
+          "transactionLocationId": -2147483587,
+          "mapId": -2147483048,
+          "priority": false
+        },
+        {
+          "name": "Algonquin - Whitefish Lake",
+          "slug": "algonquin-whitefish-lake",
+          "resourceLocationId": -2147483525,
+          "transactionLocationId": -2147483521,
+          "mapId": -2147483143,
+          "priority": false
+        }
+      ]
+    },
+    "nearNorth": {
+      "name": "Near North Parks",
+      "regionMapId": -2147483462,
+      "parks": [
+        {
+          "name": "Arrowhead",
+          "slug": "arrowhead",
+          "resourceLocationId": -2147483641,
+          "transactionLocationId": -2147483640,
+          "mapId": -2147483630,
+          "priority": true
+        },
+        {
+          "name": "Chutes",
+          "slug": "chutes",
+          "resourceLocationId": -2147483624,
+          "transactionLocationId": -2147483622,
+          "mapId": -2147483551,
+          "priority": false
+        },
+        {
+          "name": "Driftwood",
+          "slug": "driftwood",
+          "resourceLocationId": -2147483620,
+          "transactionLocationId": -2147483618,
+          "mapId": -2147483535,
+          "priority": false
+        },
+        {
+          "name": "Fairbank",
+          "slug": "fairbank",
+          "resourceLocationId": -2147483616,
+          "transactionLocationId": -2147483614,
+          "mapId": -2147483505,
+          "priority": false
+        },
+        {
+          "name": "Finlayson Point",
+          "slug": "finlayson-point",
+          "resourceLocationId": -2147483614,
+          "transactionLocationId": -2147483612,
+          "mapId": -2147483499,
+          "priority": false
+        },
+        {
+          "name": "French River",
+          "slug": "french-river",
+          "resourceLocationId": -2147483612,
+          "transactionLocationId": -2147483610,
+          "mapId": -2147482986,
+          "priority": true
+        },
+        {
+          "name": "Grundy Lake",
+          "slug": "grundy-lake",
+          "resourceLocationId": -2147483609,
+          "transactionLocationId": -2147483607,
+          "mapId": -2147483483,
+          "priority": false
+        },
+        {
+          "name": "Halfway Lake",
+          "slug": "halfway-lake",
+          "resourceLocationId": -2147483608,
+          "transactionLocationId": -2147483606,
+          "mapId": -2147483470,
+          "priority": false
+        },
+        {
+          "name": "Kap-Kig-Iwan",
+          "slug": "kap-kig-iwan",
+          "resourceLocationId": -2147483604,
+          "transactionLocationId": -2147483600,
+          "mapId": -2147483124,
+          "priority": false
+        },
+        {
+          "name": "Killarney",
+          "slug": "killarney",
+          "resourceLocationId": -2147483601,
+          "transactionLocationId": -2147483597,
+          "mapId": -2147483434,
+          "priority": true
+        },
+        {
+          "name": "Killbear",
+          "slug": "killbear",
+          "resourceLocationId": -2147483600,
+          "transactionLocationId": -2147483596,
+          "mapId": -2147483428,
+          "priority": true
+        },
+        {
+          "name": "Marten River",
+          "slug": "marten-river",
+          "resourceLocationId": -2147483588,
+          "transactionLocationId": -2147483584,
+          "mapId": -2147483387,
+          "priority": false
+        },
+        {
+          "name": "The Massasauga",
+          "slug": "massasauga",
+          "resourceLocationId": -2147483587,
+          "transactionLocationId": -2147483583,
+          "mapId": -2147483382,
+          "priority": false
+        },
+        {
+          "name": "Mikisew",
+          "slug": "mikisew",
+          "resourceLocationId": -2147483584,
+          "transactionLocationId": -2147483580,
+          "mapId": -2147483374,
+          "priority": false
+        },
+        {
+          "name": "Misery Bay",
+          "slug": "misery-bay",
+          "resourceLocationId": -2147483466,
+          "transactionLocationId": -2147483494,
+          "mapId": -2147483033,
+          "priority": false
+        },
+        {
+          "name": "Mississagi",
+          "slug": "mississagi",
+          "resourceLocationId": -2147483581,
+          "transactionLocationId": -2147483577,
+          "mapId": -2147483368,
+          "priority": false
+        },
+        {
+          "name": "Oastler Lake",
+          "slug": "oastler-lake",
+          "resourceLocationId": -2147483576,
+          "transactionLocationId": -2147483572,
+          "mapId": -2147483351,
+          "priority": false
+        },
+        {
+          "name": "Oxtongue River - Ragged Falls",
+          "slug": "oxtongue-river",
+          "resourceLocationId": -2147483467,
+          "transactionLocationId": -2147483493,
+          "mapId": -2147483032,
+          "priority": false
+        },
+        {
+          "name": "Restoule",
+          "slug": "restoule",
+          "resourceLocationId": -2147483557,
+          "transactionLocationId": -2147483553,
+          "mapId": -2147483275,
+          "priority": false
+        },
+        {
+          "name": "Samuel de Champlain",
+          "slug": "samuel-de-champlain",
+          "resourceLocationId": -2147483551,
+          "transactionLocationId": -2147483547,
+          "mapId": -2147483244,
+          "priority": false
+        },
+        {
+          "name": "Six Mile Lake",
+          "slug": "six-mile-lake",
+          "resourceLocationId": -2147483539,
+          "transactionLocationId": -2147483535,
+          "mapId": -2147483186,
+          "priority": false
+        },
+        {
+          "name": "Spanish River & Biscotasi Lake",
+          "slug": "spanish-river",
+          "resourceLocationId": -2147483536,
+          "transactionLocationId": -2147483532,
+          "mapId": -2147483137,
+          "priority": false
+        },
+        {
+          "name": "Sturgeon Bay",
+          "slug": "sturgeon-bay",
+          "resourceLocationId": -2147483535,
+          "transactionLocationId": -2147483531,
+          "mapId": -2147483172,
+          "priority": false
+        },
+        {
+          "name": "Temagami Cluster",
+          "slug": "temagami",
+          "resourceLocationId": -2147483532,
+          "transactionLocationId": -2147483528,
+          "mapId": -2147482988,
+          "priority": false
+        },
+        {
+          "name": "Windy Lake",
+          "slug": "windy-lake",
+          "resourceLocationId": -2147483524,
+          "transactionLocationId": -2147483520,
+          "mapId": -2147483142,
+          "priority": false
+        }
+      ]
+    },
+    "southeast": {
+      "name": "Southeast Parks",
+      "regionMapId": -2147483459,
+      "parks": [
+        {
+          "name": "Bon Echo",
+          "slug": "bon-echo",
+          "resourceLocationId": -2147483634,
+          "transactionLocationId": -2147483633,
+          "mapId": -2147483590,
+          "priority": true
+        },
+        {
+          "name": "Bonnechere",
+          "slug": "bonnechere",
+          "resourceLocationId": -2147483633,
+          "transactionLocationId": -2147483632,
+          "mapId": -2147483577,
+          "priority": false
+        },
+        {
+          "name": "Charleston Lake",
+          "slug": "charleston-lake",
+          "resourceLocationId": -2147483625,
+          "transactionLocationId": -2147483623,
+          "mapId": -2147483558,
+          "priority": false
+        },
+        {
+          "name": "Ferris",
+          "slug": "ferris",
+          "resourceLocationId": -2147483615,
+          "transactionLocationId": -2147483613,
+          "mapId": -2147483502,
+          "priority": false
+        },
+        {
+          "name": "Fitzroy",
+          "slug": "fitzroy",
+          "resourceLocationId": -2147483613,
+          "transactionLocationId": -2147483611,
+          "mapId": -2147483493,
+          "priority": false
+        },
+        {
+          "name": "Frontenac",
+          "slug": "frontenac",
+          "resourceLocationId": -2147483611,
+          "transactionLocationId": -2147483609,
+          "mapId": -2147483489,
+          "priority": false
+        },
+        {
+          "name": "Lake on the Mountain",
+          "slug": "lake-on-the-mountain",
+          "resourceLocationId": -2147483443,
+          "transactionLocationId": -2147483483,
+          "mapId": -2147483000,
+          "priority": false
+        },
+        {
+          "name": "Lake St. Peter",
+          "slug": "lake-st-peter",
+          "resourceLocationId": -2147483595,
+          "transactionLocationId": -2147483591,
+          "mapId": -2147483410,
+          "priority": false
+        },
+        {
+          "name": "Murphys Point",
+          "slug": "murphys-point",
+          "resourceLocationId": -2147483580,
+          "transactionLocationId": -2147483576,
+          "mapId": -2147483364,
+          "priority": false
+        },
+        {
+          "name": "North Beach",
+          "slug": "north-beach",
+          "resourceLocationId": -2147483577,
+          "transactionLocationId": -2147483573,
+          "mapId": -2147483039,
+          "priority": false
+        },
+        {
+          "name": "Presqu'ile",
+          "slug": "presquile",
+          "resourceLocationId": -2147483563,
+          "transactionLocationId": -2147483559,
+          "mapId": -2147483302,
+          "priority": true
+        },
+        {
+          "name": "Rideau River",
+          "slug": "rideau-river",
+          "resourceLocationId": -2147483556,
+          "transactionLocationId": -2147483552,
+          "mapId": -2147483270,
+          "priority": false
+        },
+        {
+          "name": "Sandbanks",
+          "slug": "sandbanks",
+          "resourceLocationId": -2147483549,
+          "transactionLocationId": -2147483545,
+          "mapId": -2147483239,
+          "priority": true
+        },
+        {
+          "name": "Sharbot Lake",
+          "slug": "sharbot-lake",
+          "resourceLocationId": -2147483545,
+          "transactionLocationId": -2147483541,
+          "mapId": -2147483215,
+          "priority": false
+        },
+        {
+          "name": "Silent Lake",
+          "slug": "silent-lake",
+          "resourceLocationId": -2147483543,
+          "transactionLocationId": -2147483539,
+          "mapId": -2147483198,
+          "priority": false
+        },
+        {
+          "name": "Silver Lake",
+          "slug": "silver-lake",
+          "resourceLocationId": -2147483541,
+          "transactionLocationId": -2147483537,
+          "mapId": -2147483193,
+          "priority": false
+        },
+        {
+          "name": "Voyageur",
+          "slug": "voyageur",
+          "resourceLocationId": -2147483530,
+          "transactionLocationId": -2147483526,
+          "mapId": -2147483165,
+          "priority": false
+        }
+      ]
+    },
+    "southwestCentral": {
+      "name": "Southwest & Central Parks",
+      "regionMapId": -2147483461,
+      "parks": [
+        {
+          "name": "Awenda",
+          "slug": "awenda",
+          "resourceLocationId": -2147483639,
+          "transactionLocationId": -2147483638,
+          "mapId": -2147483623,
+          "priority": true
+        },
+        {
+          "name": "Balsam Lake",
+          "slug": "balsam-lake",
+          "resourceLocationId": -2147483638,
+          "transactionLocationId": -2147483637,
+          "mapId": -2147483614,
+          "priority": false
+        },
+        {
+          "name": "Bass Lake",
+          "slug": "bass-lake",
+          "resourceLocationId": -2147483637,
+          "transactionLocationId": -2147483636,
+          "mapId": -2147483602,
+          "priority": false
+        },
+        {
+          "name": "Bronte Creek",
+          "slug": "bronte-creek",
+          "resourceLocationId": null,
+          "transactionLocationId": -2147483629,
+          "mapId": -2147483572,
+          "priority": false
+        },
+        {
+          "name": "Craigleith",
+          "slug": "craigleith",
+          "resourceLocationId": -2147483623,
+          "transactionLocationId": -2147483621,
+          "mapId": -2147483546,
+          "priority": false
+        },
+        {
+          "name": "Darlington",
+          "slug": "darlington",
+          "resourceLocationId": -2147483622,
+          "transactionLocationId": -2147483620,
+          "mapId": -2147483540,
+          "priority": false
+        },
+        {
+          "name": "Earl Rowe",
+          "slug": "earl-rowe",
+          "resourceLocationId": -2147483619,
+          "transactionLocationId": -2147483617,
+          "mapId": -2147483531,
+          "priority": false
+        },
+        {
+          "name": "Emily",
+          "slug": "emily",
+          "resourceLocationId": -2147483618,
+          "transactionLocationId": -2147483616,
+          "mapId": -2147483518,
+          "priority": false
+        },
+        {
+          "name": "Forks of the Credit",
+          "slug": "forks-of-the-credit",
+          "resourceLocationId": -2147483473,
+          "transactionLocationId": -2147483507,
+          "mapId": -2147483062,
+          "priority": false
+        },
+        {
+          "name": "Inverhuron",
+          "slug": "inverhuron",
+          "resourceLocationId": -2147483607,
+          "transactionLocationId": -2147483603,
+          "mapId": -2147483458,
+          "priority": false
+        },
+        {
+          "name": "Kawartha Highlands",
+          "slug": "kawartha-highlands",
+          "resourceLocationId": -2147483603,
+          "transactionLocationId": -2147483599,
+          "mapId": -2147483441,
+          "priority": false
+        },
+        {
+          "name": "Komoka",
+          "slug": "komoka",
+          "resourceLocationId": -2147483468,
+          "transactionLocationId": -2147483496,
+          "mapId": -2147483031,
+          "priority": false
+        },
+        {
+          "name": "Long Point",
+          "slug": "long-point",
+          "resourceLocationId": -2147483593,
+          "transactionLocationId": -2147483589,
+          "mapId": -2147483408,
+          "priority": false
+        },
+        {
+          "name": "MacGregor Point",
+          "slug": "macgregor-point",
+          "resourceLocationId": -2147483592,
+          "transactionLocationId": -2147483588,
+          "mapId": -2147483404,
+          "priority": true
+        },
+        {
+          "name": "Mara",
+          "slug": "mara",
+          "resourceLocationId": -2147483589,
+          "transactionLocationId": -2147483585,
+          "mapId": -2147483390,
+          "priority": false
+        },
+        {
+          "name": "Mark S. Burnham",
+          "slug": "mark-s-burnham",
+          "resourceLocationId": -2147483465,
+          "transactionLocationId": -2147483495,
+          "mapId": -2147483034,
+          "priority": false
+        },
+        {
+          "name": "McRae Point",
+          "slug": "mcrae-point",
+          "resourceLocationId": -2147483586,
+          "transactionLocationId": -2147483582,
+          "mapId": -2147483381,
+          "priority": false
+        },
+        {
+          "name": "Mono Cliffs",
+          "slug": "mono-cliffs",
+          "resourceLocationId": -2147483472,
+          "transactionLocationId": -2147483506,
+          "mapId": -2147483059,
+          "priority": false
+        },
+        {
+          "name": "Petroglyphs",
+          "slug": "petroglyphs",
+          "resourceLocationId": -2147483520,
+          "transactionLocationId": -2147483516,
+          "mapId": -2147482997,
+          "priority": false
+        },
+        {
+          "name": "Pinery",
+          "slug": "pinery",
+          "resourceLocationId": -2147483568,
+          "transactionLocationId": -2147483564,
+          "mapId": -2147483334,
+          "priority": true
+        },
+        {
+          "name": "Point Farms",
+          "slug": "point-farms",
+          "resourceLocationId": -2147483566,
+          "transactionLocationId": -2147483562,
+          "mapId": -2147483311,
+          "priority": false
+        },
+        {
+          "name": "Port Burwell",
+          "slug": "port-burwell",
+          "resourceLocationId": -2147483565,
+          "transactionLocationId": -2147483561,
+          "mapId": -2147483307,
+          "priority": false
+        },
+        {
+          "name": "Rock Point",
+          "slug": "rock-point",
+          "resourceLocationId": -2147483554,
+          "transactionLocationId": -2147483550,
+          "mapId": -2147483260,
+          "priority": false
+        },
+        {
+          "name": "Rondeau",
+          "slug": "rondeau",
+          "resourceLocationId": -2147483553,
+          "transactionLocationId": -2147483549,
+          "mapId": -2147483254,
+          "priority": false
+        },
+        {
+          "name": "Sauble Falls",
+          "slug": "sauble-falls",
+          "resourceLocationId": -2147483547,
+          "transactionLocationId": -2147483543,
+          "mapId": -2147483225,
+          "priority": false
+        },
+        {
+          "name": "Selkirk",
+          "slug": "selkirk",
+          "resourceLocationId": -2147483546,
+          "transactionLocationId": -2147483542,
+          "mapId": -2147483221,
+          "priority": false
+        },
+        {
+          "name": "Sibbald Point",
+          "slug": "sibbald-point",
+          "resourceLocationId": -2147483544,
+          "transactionLocationId": -2147483540,
+          "mapId": -2147483210,
+          "priority": true
+        },
+        {
+          "name": "Springwater",
+          "slug": "springwater",
+          "resourceLocationId": -2147483519,
+          "transactionLocationId": -2147483515,
+          "mapId": -2147483035,
+          "priority": false
+        },
+        {
+          "name": "Turkey Point",
+          "slug": "turkey-point",
+          "resourceLocationId": -2147483531,
+          "transactionLocationId": -2147483527,
+          "mapId": -2147483170,
+          "priority": false
+        },
+        {
+          "name": "Wasaga Beach",
+          "slug": "wasaga-beach",
+          "resourceLocationId": null,
+          "transactionLocationId": -2147483514,
+          "mapId": -2147483019,
+          "priority": true
+        },
+        {
+          "name": "Wheatley",
+          "slug": "wheatley",
+          "resourceLocationId": -2147483527,
+          "transactionLocationId": -2147483523,
+          "mapId": -2147483154,
+          "priority": false
+        }
+      ]
+    },
+    "northern": {
+      "name": "Northern Parks",
+      "regionMapId": -2147483463,
+      "parks": [
+        {
+          "name": "Aaron",
+          "slug": "aaron",
+          "resourceLocationId": -2147483648,
+          "transactionLocationId": -2147483648,
+          "mapId": -2147483648,
+          "priority": false
+        },
+        {
+          "name": "Arrow Lake",
+          "slug": "arrow-lake",
+          "resourceLocationId": -2147483642,
+          "transactionLocationId": -2147483641,
+          "mapId": -2147483122,
+          "priority": false
+        },
+        {
+          "name": "Batchawana Bay",
+          "slug": "batchawana-bay",
+          "resourceLocationId": -2147483469,
+          "transactionLocationId": -2147483505,
+          "mapId": -2147483056,
+          "priority": false
+        },
+        {
+          "name": "Blue Lake",
+          "slug": "blue-lake",
+          "resourceLocationId": -2147483635,
+          "transactionLocationId": -2147483634,
+          "mapId": -2147483595,
+          "priority": false
+        },
+        {
+          "name": "Caliper Lake",
+          "slug": "caliper-lake",
+          "resourceLocationId": -2147483628,
+          "transactionLocationId": -2147483627,
+          "mapId": -2147483565,
+          "priority": false
+        },
+        {
+          "name": "Esker Lakes",
+          "slug": "esker-lakes",
+          "resourceLocationId": -2147483617,
+          "transactionLocationId": -2147483615,
+          "mapId": -2147483511,
+          "priority": false
+        },
+        {
+          "name": "Fushimi Lake",
+          "slug": "fushimi-lake",
+          "resourceLocationId": -2147483610,
+          "transactionLocationId": -2147483608,
+          "mapId": -2147483488,
+          "priority": false
+        },
+        {
+          "name": "Ivanhoe Lake",
+          "slug": "ivanhoe-lake",
+          "resourceLocationId": -2147483606,
+          "transactionLocationId": -2147483602,
+          "mapId": -2147483453,
+          "priority": false
+        },
+        {
+          "name": "Kakabeka Falls",
+          "slug": "kakabeka-falls",
+          "resourceLocationId": -2147483605,
+          "transactionLocationId": -2147483601,
+          "mapId": -2147483446,
+          "priority": false
+        },
+        {
+          "name": "Kettle Lakes",
+          "slug": "kettle-lakes",
+          "resourceLocationId": -2147483602,
+          "transactionLocationId": -2147483598,
+          "mapId": -2147483440,
+          "priority": false
+        },
+        {
+          "name": "Lake Superior",
+          "slug": "lake-superior",
+          "resourceLocationId": -2147483646,
+          "transactionLocationId": -2147483646,
+          "mapId": -2147483643,
+          "priority": false
+        },
+        {
+          "name": "MacLeod",
+          "slug": "macleod",
+          "resourceLocationId": -2147483521,
+          "transactionLocationId": -2147483517,
+          "mapId": -2147483090,
+          "priority": false
+        },
+        {
+          "name": "Missinaibi",
+          "slug": "missinaibi",
+          "resourceLocationId": -2147483583,
+          "transactionLocationId": -2147483579,
+          "mapId": -2147483128,
+          "priority": false
+        },
+        {
+          "name": "Missinaibi (River)",
+          "slug": "missinaibi-river",
+          "resourceLocationId": -2147483582,
+          "transactionLocationId": -2147483578,
+          "mapId": -2147483125,
+          "priority": false
+        },
+        {
+          "name": "Nagagamisis",
+          "slug": "nagagamisis",
+          "resourceLocationId": -2147483579,
+          "transactionLocationId": -2147483575,
+          "mapId": -2147483359,
+          "priority": false
+        },
+        {
+          "name": "Neys",
+          "slug": "neys",
+          "resourceLocationId": -2147483578,
+          "transactionLocationId": -2147483574,
+          "mapId": -2147483355,
+          "priority": false
+        },
+        {
+          "name": "Ojibway",
+          "slug": "ojibway",
+          "resourceLocationId": -2147483573,
+          "transactionLocationId": -2147483569,
+          "mapId": -2147483131,
+          "priority": false
+        },
+        {
+          "name": "Ouimet Canyon",
+          "slug": "ouimet-canyon",
+          "resourceLocationId": -2147483452,
+          "transactionLocationId": -2147483489,
+          "mapId": -2147482982,
+          "priority": false
+        },
+        {
+          "name": "Pakwash",
+          "slug": "pakwash",
+          "resourceLocationId": -2147483570,
+          "transactionLocationId": -2147483566,
+          "mapId": -2147483087,
+          "priority": false
+        },
+        {
+          "name": "Pancake Bay",
+          "slug": "pancake-bay",
+          "resourceLocationId": -2147483569,
+          "transactionLocationId": -2147483565,
+          "mapId": -2147483342,
+          "priority": false
+        },
+        {
+          "name": "Quetico",
+          "slug": "quetico",
+          "resourceLocationId": -2147483562,
+          "transactionLocationId": -2147483558,
+          "mapId": -2147483292,
+          "priority": false
+        },
+        {
+          "name": "Rainbow Falls",
+          "slug": "rainbow-falls",
+          "resourceLocationId": -2147483560,
+          "transactionLocationId": -2147483556,
+          "mapId": -2147483284,
+          "priority": false
+        },
+        {
+          "name": "René Brunelle",
+          "slug": "rene-brunelle",
+          "resourceLocationId": -2147483558,
+          "transactionLocationId": -2147483554,
+          "mapId": -2147483280,
+          "priority": false
+        },
+        {
+          "name": "Rushing River",
+          "slug": "rushing-river",
+          "resourceLocationId": -2147483552,
+          "transactionLocationId": -2147483548,
+          "mapId": -2147483250,
+          "priority": false
+        },
+        {
+          "name": "Sandbar Lake",
+          "slug": "sandbar-lake",
+          "resourceLocationId": -2147483548,
+          "transactionLocationId": -2147483544,
+          "mapId": -2147483227,
+          "priority": false
+        },
+        {
+          "name": "Silver Falls",
+          "slug": "silver-falls",
+          "resourceLocationId": -2147483542,
+          "transactionLocationId": -2147483538,
+          "mapId": -2147483133,
+          "priority": false
+        },
+        {
+          "name": "Sioux Narrows",
+          "slug": "sioux-narrows",
+          "resourceLocationId": -2147483540,
+          "transactionLocationId": -2147483536,
+          "mapId": -2147483189,
+          "priority": false
+        },
+        {
+          "name": "Sleeping Giant",
+          "slug": "sleeping-giant",
+          "resourceLocationId": -2147483538,
+          "transactionLocationId": -2147483534,
+          "mapId": -2147483178,
+          "priority": false
+        },
+        {
+          "name": "Tidewater",
+          "slug": "tidewater",
+          "resourceLocationId": -2147483515,
+          "transactionLocationId": -2147483511,
+          "mapId": -2147483072,
+          "priority": false
+        },
+        {
+          "name": "Wabakimi",
+          "slug": "wabakimi",
+          "resourceLocationId": -2147483529,
+          "transactionLocationId": -2147483525,
+          "mapId": -2147483135,
+          "priority": false
+        },
+        {
+          "name": "Wakami Lake",
+          "slug": "wakami-lake",
+          "resourceLocationId": -2147483528,
+          "transactionLocationId": -2147483524,
+          "mapId": -2147483159,
+          "priority": false
+        },
+        {
+          "name": "White Lake",
+          "slug": "white-lake",
+          "resourceLocationId": -2147483526,
+          "transactionLocationId": -2147483522,
+          "mapId": -2147483148,
+          "priority": false
+        },
+        {
+          "name": "Windy Lake",
+          "slug": "windy-lake-northern",
+          "resourceLocationId": -2147483524,
+          "transactionLocationId": -2147483520,
+          "mapId": -2147483142,
+          "priority": false
+        },
+        {
+          "name": "Woodland Caribou",
+          "slug": "woodland-caribou",
+          "resourceLocationId": -2147483523,
+          "transactionLocationId": -2147483519,
+          "mapId": -2147483134,
+          "priority": false
+        }
+      ]
+    }
+  }
+}
