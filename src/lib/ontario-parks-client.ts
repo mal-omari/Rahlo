@@ -272,8 +272,29 @@ export async function getParkMaps(resourceLocationId: number) {
  *     endDate: "2026-07-13",
  *   }, session);
  */
+/**
+ * Main entry point: checks availability across an entire park for given dates.
+ * Returns only the sites that are available (availability === 1).
+ *
+ * transactionLocationId and resourceLocationId are the park-level IDs from
+ * parks-registry.json — required to build working booking URLs. mapIds are
+ * the campground loop(s) within that park to check.
+ *
+ * Usage:
+ *   const session = await createSession();
+ *   const available = await getAvailableSites({
+ *     transactionLocationId: -2147483630,
+ *     resourceLocationId: -2147483631,
+ *     mapIds: [-2147483573],  // Algonquin Brent CG1
+ *     parkName: "Algonquin - Brent",
+ *     startDate: "2026-07-11",
+ *     endDate: "2026-07-13",
+ *   }, session);
+ */
 export async function getAvailableSites(
   params: {
+    transactionLocationId: number;
+    resourceLocationId: number;
     mapIds: number[];
     parkName: string;
     startDate: string;
@@ -282,7 +303,15 @@ export async function getAvailableSites(
   },
   session: ParkSession
 ): Promise<AvailableSite[]> {
-  const { mapIds, parkName, startDate, endDate, partySize = 2 } = params;
+  const {
+    transactionLocationId,
+    resourceLocationId,
+    mapIds,
+    parkName,
+    startDate,
+    endDate,
+    partySize = 2,
+  } = params;
   const available: AvailableSite[] = [];
 
   for (const mapId of mapIds) {
@@ -290,6 +319,17 @@ export async function getAvailableSites(
       { mapId, startDate, endDate, partySize },
       session
     );
+
+    // One booking URL per map loop — same for every site in that loop,
+    // since the results page links to the campground map, not a single site.
+    const bookingUrl = buildBookingUrl({
+      transactionLocationId,
+      resourceLocationId,
+      mapId,
+      startDate,
+      endDate,
+      partySize,
+    });
 
     for (const [resourceId, availabilityArr] of Object.entries(
       result.resourceAvailabilities
@@ -304,13 +344,7 @@ export async function getAvailableSites(
           parkName,
           startDate,
           endDate,
-          bookingUrl: buildBookingUrl({
-            resourceId: Number(resourceId),
-            mapId,
-            startDate,
-            endDate,
-            partySize,
-          }),
+          bookingUrl,
         });
       }
     }
@@ -325,17 +359,40 @@ export async function getAvailableSites(
 // ─── Utilities ────────────────────────────────────────────────────────────────
 
 /**
- * Builds a direct booking URL for a specific site.
- * Users click this to go straight to the Ontario Parks booking page.
+ * Builds a direct booking URL for a specific park/campground + date range.
+ * Users click this to go straight to the Ontario Parks results page for
+ * that campground, with the correct dates pre-filled.
+ *
+ * Matches the captured working pattern:
+ *   /create-booking/results?transactionLocationId=...&resourceLocationId=...
+ *     &mapId=...&startDate=...&endDate=...&nights=...
+ *
+ * NOTE: The results page does not accept a resourceId/site param — it loads
+ * the whole campground map for the given dates. There is no documented way
+ * to deep-link to one specific site, so we link to the map and let the user
+ * pick the open site themselves (we tell them which site number to look for
+ * in the UI).
+ *
+ * transactionLocationId and resourceLocationId come from parks-registry.json
+ * (per-park, not per-site) — pass them in from whichever park record the
+ * site belongs to.
  */
 export function buildBookingUrl(params: {
-  resourceId: number;
+  transactionLocationId: number;
+  resourceLocationId: number;
   mapId: number;
   startDate: string;
   endDate: string;
   partySize: number;
 }): string {
-  const { resourceId, mapId, startDate, endDate, partySize } = params;
+  const {
+    transactionLocationId,
+    resourceLocationId,
+    mapId,
+    startDate,
+    endDate,
+    partySize,
+  } = params;
 
   const nights = Math.ceil(
     (new Date(endDate).getTime() - new Date(startDate).getTime()) /
@@ -348,16 +405,18 @@ export function buildBookingUrl(params: {
 
   return (
     `https://reservations.ontarioparks.ca/create-booking/results` +
-    `?bookingCategoryId=0` +
+    `?transactionLocationId=${transactionLocationId}` +
+    `&resourceLocationId=${resourceLocationId}` +
+    `&mapId=${mapId}` +
+    `&searchTabGroupId=0` +
+    `&bookingCategoryId=0` +
     `&startDate=${startDate}` +
     `&endDate=${endDate}` +
     `&nights=${nights}` +
     `&isReserving=true` +
-    `&mapId=${mapId}` +
     `&equipmentId=-32768` +
     `&subEquipmentId=-32768` +
-    `&peopleCapacityCategoryCounts=${peopleCapacity}` +
-    `&resourceId=${resourceId}`
+    `&peopleCapacityCategoryCounts=${peopleCapacity}`
   );
 }
 

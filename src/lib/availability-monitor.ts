@@ -17,6 +17,8 @@ export interface MonitoredSearch {
   id: string;               // Supabase row ID
   userId: string;
   parkName: string;
+  transactionLocationId: number; // park-level ID, from parks-registry.json
+  resourceLocationId: number;    // park-level ID, from parks-registry.json
   mapIds: number[];
   startDate: string;
   endDate: string;
@@ -43,6 +45,8 @@ export async function checkForNewOpenings(
 
   const currentlyAvailable = await getAvailableSites(
     {
+      transactionLocationId: search.transactionLocationId,
+      resourceLocationId: search.resourceLocationId,
       mapIds: search.mapIds,
       parkName: search.parkName,
       startDate: search.startDate,
