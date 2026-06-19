@@ -1,26 +1,73 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+:root { color-scheme: light; }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html, body {
+  background: #F5F0E8;
+  color: #1C2B1A;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  html, body { background: #F5F0E8 !important; color: #1C2B1A !important; }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes rahlo-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.75); }
 }
+.live-dot { animation: rahlo-pulse 2s ease-in-out infinite; }
+
+@keyframes rahlo-shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: 200px 0; }
+}
+.urgent-shimmer {
+  background: linear-gradient(90deg, #FAECE7 25%, #f5bfad 50%, #FAECE7 75%);
+  background-size: 400px 100%;
+  animation: rahlo-shimmer 2s infinite;
+}
+
+.field-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  color: #4A7C2F;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  display: block;
+  margin-bottom: 6px;
+}
+.field-control {
+  background: white;
+  border: 1px solid #D4E4B8;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #1C2B1A;
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+}
+.field-control:focus { outline: none; border-color: #4A7C2F; }
+
+.chip {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid #D4E4B8;
+  background: white;
+  color: #2D5016;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+.chip-active { background: #2D5016; color: #C8E6A0; border-color: #2D5016; }
+.chip:active { transform: scale(0.96); }
