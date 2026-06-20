@@ -6,7 +6,7 @@ export interface CampsiteResult {
   id: string; parkId: string; parkName: string; siteName: string; region: string
   driveMinutes: number; pricePerNight: number; availableCount: number
   availabilityLevel: AvailabilityLevel; features: SiteFeature[]; siteType: SiteType
-  bookingUrl: string; ontarioParksId: string; resourceLocationId: string; transactionLocationId: string
+  bookingUrl: string; ontarioParksId: string; resourceLocationId: string
 }
 
 export interface SearchFilters {

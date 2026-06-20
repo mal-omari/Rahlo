@@ -1,11 +1,20 @@
 'use client'
 import type { CampsiteResult } from '@/types'
 import { AVAILABILITY_CONFIG, FEATURE_CONFIG } from '@/types'
-import { formatDriveTime, buildBookingUrl } from '@/lib/utils'
+import { formatDriveTime } from '@/lib/utils'
+import { buildBookingUrl } from '@/lib/ontario-parks-client'
 
 export function CampsiteCard({ result, checkIn, checkOut, onAlert }: { result: CampsiteResult; checkIn: string; checkOut: string; onAlert?: (r: CampsiteResult) => void }) {
   const avail = AVAILABILITY_CONFIG[result.availabilityLevel]
-  const bookingUrl = buildBookingUrl(result.ontarioParksId, result.resourceLocationId, checkIn, checkOut, 2)
+  const bookingUrl = buildBookingUrl({
+    transactionLocationId: Number(result.transactionLocationId),
+    resourceLocationId: Number(result.resourceLocationId),
+    mapId: Number(result.ontarioParksId),
+    startDate: checkIn,
+    endDate: checkOut,
+    partySize: 2,
+  })
+
   return (
     <article style={{background:'white', borderRadius:12, border:'1px solid #E8EFD8', overflow:'hidden', marginBottom:12}}>
       <div style={{padding:16}}>
@@ -31,19 +40,29 @@ export function CampsiteCard({ result, checkIn, checkOut, onAlert }: { result: C
           ))}
         </div>
       </div>
-      <div style={{background:'#F8FBF2', borderTop:'1px solid #E8EFD8', padding:'12px 16px', display:'flex', alignItems:'center', justifyContent:'space-between'}}>
-        <div>
-          <p style={{fontSize:11, color:'#94A884', margin:0}}>from</p>
-          <p style={{fontFamily:'IBM Plex Mono, monospace', fontSize:17, fontWeight:500, color:'#1C2B1A', margin:0}}>${result.pricePerNight}<span style={{fontSize:11, color:'#94A884', fontWeight:400}}>/night</span></p>
+      <div style={{background:'#F8FBF2', borderTop:'1px solid #E8EFD8', padding:'12px 16px'}}>
+        <div style={{display:'flex', alignItems:'center', justifyContent:'space-between'}}>
+          <div>
+            <p style={{fontSize:11, color:'#94A884', margin:0}}>from</p>
+            <p style={{fontFamily:'IBM Plex Mono, monospace', fontSize:17, fontWeight:500, color:'#1C2B1A', margin:0}}>${result.pricePerNight}<span style={{fontSize:11, color:'#94A884', fontWeight:400}}>/night</span></p>
+          </div>
+          <div style={{display:'flex', gap:8, alignItems:'center'}}>
+            <button onClick={() => onAlert?.(result)} style={{display:'flex', alignItems:'center', gap:6, padding:'8px 12px', background:'none', border:'1px solid #D4E4B8', borderRadius:8, fontSize:12, color:'#2D5016', fontWeight:500, cursor:'pointer'}}>
+              🔔 Alert me
+            </button>
+            <a
+              href={bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{display:'flex', alignItems:'center', gap:6, padding:'8px 14px', background:'#2D5016', borderRadius:8, fontSize:13, color:'#C8E6A0', fontWeight:500, textDecoration:'none'}}
+            >
+              Book ↗
+            </a>
+          </div>
         </div>
-        <div style={{display:'flex', gap:8}}>
-          <button onClick={() => onAlert?.(result)} style={{display:'flex', alignItems:'center', gap:6, padding:'8px 12px', background:'none', border:'1px solid #D4E4B8', borderRadius:8, fontSize:12, color:'#2D5016', fontWeight:500, cursor:'pointer'}}>
-            🔔 Alert me
-          </button>
-          <a href={bookingUrl} target="_blank" rel="noopener noreferrer" style={{display:'flex', alignItems:'center', gap:6, padding:'8px 14px', background:'#2D5016', borderRadius:8, fontSize:13, color:'#C8E6A0', fontWeight:500, textDecoration:'none'}}>
-            Book ↗
-          </a>
-        </div>
+        <p style={{fontSize:11, color:'#94A884', margin:'8px 0 0', lineHeight:1.4}}>
+          Opens Ontario Parks pre-filled with your dates — tap <strong>Search</strong> there to see the live site map.
+        </p>
       </div>
     </article>
   )

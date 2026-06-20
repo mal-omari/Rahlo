@@ -13,11 +13,6 @@ export function classifyAvailability(count: number): AvailabilityLevel {
   return 'high'
 }
 
-export function buildBookingUrl(ontarioParksId: string, resourceLocationId: string, checkIn: string, checkOut: string, partySize: number): string {
-  const params = new URLSearchParams({ mapId: ontarioParksId, resourceLocationId, startDate: checkIn, endDate: checkOut, partySize: String(partySize) })
-  return `https://reservations.ontarioparks.ca/#/create-booking/results?${params.toString()}`
-}
-
 export type SortKey = 'urgency' | 'distance' | 'price'
 
 export function sortResults(results: CampsiteResult[], key: SortKey): CampsiteResult[] {
