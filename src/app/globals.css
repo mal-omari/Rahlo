@@ -71,3 +71,9 @@ html, body {
 }
 .chip-active { background: #2D5016; color: #C8E6A0; border-color: #2D5016; }
 .chip:active { transform: scale(0.96); }
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(90,173,78,0.6); }
+  50% { box-shadow: 0 0 16px rgba(90,173,78,0.9); }
+}
+.live-dot { animation: rahlo-pulse 2s ease-in-out infinite, glow-pulse 2s ease-in-out infinite; }

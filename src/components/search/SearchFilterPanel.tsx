@@ -29,21 +29,55 @@ export function SearchFilterPanel({ initialFilters, onSearch, compact }: { initi
     }
   }
 
-  return (
-    <div style={{background:'#F5F0E8', padding: compact ? 16 : '28px 20px 24px', borderRadius: compact ? 0 : '20px 20px 0 0', marginTop: compact ? 0 : -20, position:'relative', zIndex:2}}>
-      {!compact && <p style={{fontFamily:'IBM Plex Mono, monospace', fontSize:13, color:'#2D5016', marginBottom:18, letterSpacing:'0.5px'}}>/&nbsp;find a campsite</p>}
+  const panelStyle: React.CSSProperties = {
+    background: '#F5F0E8',
+    padding: compact ? '16px' : '28px 20px 28px',
+    borderRadius: compact ? '0' : '24px 24px 0 0',
+    marginTop: compact ? '0' : '-24px',
+    position: 'relative',
+    zIndex: 2,
+    boxShadow: compact ? 'none' : '0 -4px 24px rgba(28,43,26,0.08)',
+  }
 
-      <div style={{marginBottom:14}}>
-        <label className="field-label">Park or region</label>
+  return (
+    <div style={panelStyle}>
+      {!compact && (
+        <p style={{fontFamily:'IBM Plex Mono, monospace', fontSize:11, color:'#94A884', marginBottom:20, letterSpacing:'1px', textTransform:'uppercase'}}>
+          Find a campsite
+        </p>
+      )}
+
+      {/* Region */}
+      <div style={{marginBottom:12}}>
         <div style={{position:'relative'}}>
-          <button onClick={() => setShowRegion(v=>!v)} className="field-control" style={{display:'flex', alignItems:'center', justifyContent:'space-between', cursor:'pointer', textAlign:'left', height:46, boxSizing:'border-box'}}>
-            <span>{region}</span>
-            <i className="ti ti-map-pin" style={{fontSize:17, color:'#4A7C2F'}} aria-hidden="true" />
+          <button
+            onClick={() => setShowRegion(v=>!v)}
+            style={{
+              width:'100%',
+              display:'flex',
+              alignItems:'center',
+              justifyContent:'space-between',
+              background:'white',
+              border:'1.5px solid #E2EDD4',
+              borderRadius:14,
+              padding:'14px 16px',
+              fontSize:15,
+              color:'#1C2B1A',
+              cursor:'pointer',
+              textAlign:'left',
+              boxShadow:'0 1px 4px rgba(28,43,26,0.06)',
+            }}
+          >
+            <div style={{display:'flex', alignItems:'center', gap:10}}>
+              <span style={{fontSize:18}}>📍</span>
+              <span style={{fontWeight:500}}>{region}</span>
+            </div>
+            <span style={{color:'#94A884', fontSize:12}}>▾</span>
           </button>
           {showRegion && (
-            <div style={{position:'absolute', top:'calc(100% + 4px)', left:0, right:0, background:'white', border:'1px solid #D4E4B8', borderRadius:12, boxShadow:'0 8px 24px rgba(28,43,26,0.12)', zIndex:20, maxHeight:200, overflowY:'auto'}}>
+            <div style={{position:'absolute', top:'calc(100% + 6px)', left:0, right:0, background:'white', border:'1.5px solid #E2EDD4', borderRadius:14, boxShadow:'0 8px 32px rgba(28,43,26,0.14)', zIndex:20, maxHeight:220, overflowY:'auto'}}>
               {REGIONS.map(r => (
-                <button key={r} onClick={() => { setRegion(r); setShowRegion(false) }} style={{width:'100%', textAlign:'left', padding:'12px 16px', fontSize:14, background:'none', border:'none', cursor:'pointer', color: r===region ? '#2D5016' : '#1C2B1A', fontWeight: r===region ? 500 : 400}}>
+                <button key={r} onClick={() => { setRegion(r); setShowRegion(false) }} style={{width:'100%', textAlign:'left', padding:'13px 16px', fontSize:14, background:'none', border:'none', borderBottom:'1px solid #F0F6E8', cursor:'pointer', color: r===region ? '#2D5016' : '#1C2B1A', fontWeight: r===region ? 600 : 400}}>
                   {r}
                 </button>
               ))}
@@ -52,61 +86,99 @@ export function SearchFilterPanel({ initialFilters, onSearch, compact }: { initi
         </div>
       </div>
 
-      <div style={{display:'flex', gap:12, marginBottom:14}}>
-        <div style={{flex:1, minWidth:0}}>
-          <label className="field-label">Check in</label>
-          <div style={{position:'relative', height:46}}>
-            <div className="field-control" style={{display:'flex', alignItems:'center', justifyContent:'space-between', height:46, boxSizing:'border-box', pointerEvents:'none'}}>
-              <span>{formatDisplayDate(checkIn)}</span>
-              <i className="ti ti-calendar" style={{fontSize:17, color:'#4A7C2F'}} aria-hidden="true" />
+      {/* Dates */}
+      <div style={{display:'flex', gap:10, marginBottom:20}}>
+        {[
+          {label:'Check in', value:checkIn, onChange:(v:string)=>setCheckIn(v), min:undefined},
+          {label:'Check out', value:checkOut, onChange:(v:string)=>setCheckOut(v), min:checkIn},
+        ].map(({label, value, onChange, min}) => (
+          <div key={label} style={{flex:1, position:'relative'}}>
+            <div style={{
+              background:'white',
+              border:'1.5px solid #E2EDD4',
+              borderRadius:14,
+              padding:'12px 14px',
+              boxShadow:'0 1px 4px rgba(28,43,26,0.06)',
+            }}>
+              <p style={{fontSize:10, color:'#94A884', fontFamily:'IBM Plex Mono, monospace', textTransform:'uppercase', letterSpacing:'0.8px', margin:'0 0 3px'}}>{label}</p>
+              <p style={{fontSize:15, fontWeight:600, color:'#1C2B1A', margin:0}}>{formatDisplayDate(value)}</p>
             </div>
-            <input
-              type="date"
-              value={checkIn}
-              onChange={e=>setCheckIn(e.target.value)}
-              style={{position:'absolute', top:0, left:0, width:'100%', height:'100%', opacity:0, cursor:'pointer', border:'none', padding:0, margin:0}}
-            />
+            <input type="date" value={value} min={min} onChange={e=>onChange(e.target.value)} style={{position:'absolute', inset:0, opacity:0, cursor:'pointer', width:'100%', height:'100%'}} />
           </div>
-        </div>
-        <div style={{flex:1, minWidth:0}}>
-          <label className="field-label">Check out</label>
-          <div style={{position:'relative', height:46}}>
-            <div className="field-control" style={{display:'flex', alignItems:'center', justifyContent:'space-between', height:46, boxSizing:'border-box', pointerEvents:'none'}}>
-              <span>{formatDisplayDate(checkOut)}</span>
-              <i className="ti ti-calendar" style={{fontSize:17, color:'#4A7C2F'}} aria-hidden="true" />
-            </div>
-            <input
-              type="date"
-              value={checkOut}
-              min={checkIn}
-              onChange={e=>setCheckOut(e.target.value)}
-              style={{position:'absolute', top:0, left:0, width:'100%', height:'100%', opacity:0, cursor:'pointer', border:'none', padding:0, margin:0}}
-            />
-          </div>
-        </div>
-      </div>
-
-      <p className="field-label">Site type</p>
-      <div style={{display:'flex', gap:8, flexWrap:'wrap', marginBottom:14}}>
-        {SITE_TYPES.map(t => (
-          <button key={t} onClick={() => toggleSiteType(t)} className={`chip ${siteTypes.includes(t) ? 'chip-active' : ''}`}>
-            {SITE_TYPE_CONFIG[t].emoji} {SITE_TYPE_CONFIG[t].label}
-          </button>
         ))}
       </div>
 
-      <p className="field-label">Features</p>
-      <div style={{display:'flex', gap:8, flexWrap:'wrap', marginBottom:20}}>
-        {FEATURES.map(f => (
-          <button key={f} onClick={() => toggleFeature(f)} className={`chip ${features.includes(f) ? 'chip-active' : ''}`}>
-            {FEATURE_CONFIG[f].emoji} {FEATURE_CONFIG[f].label}
-          </button>
-        ))}
+      {/* Site type */}
+      <div style={{marginBottom:16}}>
+        <p style={{fontSize:11, color:'#94A884', fontFamily:'IBM Plex Mono, monospace', textTransform:'uppercase', letterSpacing:'0.8px', marginBottom:10}}>Site type</p>
+        <div style={{display:'flex', gap:8, flexWrap:'wrap'}}>
+          {SITE_TYPES.map(t => (
+            <button key={t} onClick={() => toggleSiteType(t)} style={{
+              padding:'9px 14px',
+              borderRadius:24,
+              fontSize:13,
+              fontWeight:500,
+              border: siteTypes.includes(t) ? 'none' : '1.5px solid #E2EDD4',
+              background: siteTypes.includes(t) ? '#2D5016' : 'white',
+              color: siteTypes.includes(t) ? '#C8E6A0' : '#1C2B1A',
+              cursor:'pointer',
+              display:'flex',
+              alignItems:'center',
+              gap:6,
+              boxShadow: siteTypes.includes(t) ? '0 2px 8px rgba(45,80,22,0.3)' : '0 1px 3px rgba(28,43,26,0.06)',
+              transition:'all 0.15s',
+            }}>
+              {SITE_TYPE_CONFIG[t].emoji} {SITE_TYPE_CONFIG[t].label}
+            </button>
+          ))}
+        </div>
       </div>
 
-      <button onClick={handleSearch} style={{width:'100%', background:'#E8622A', color:'white', border:'none', borderRadius:12, padding:'16px', fontSize:16, fontWeight:600, cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', gap:8}}>
-        <i className="ti ti-search" style={{fontSize:18}} aria-hidden="true" />
-        Search all Ontario Parks
+      {/* Features */}
+      <div style={{marginBottom:24}}>
+        <p style={{fontSize:11, color:'#94A884', fontFamily:'IBM Plex Mono, monospace', textTransform:'uppercase', letterSpacing:'0.8px', marginBottom:10}}>Features</p>
+        <div style={{display:'flex', gap:8, flexWrap:'wrap'}}>
+          {FEATURES.map(f => (
+            <button key={f} onClick={() => toggleFeature(f)} style={{
+              padding:'9px 14px',
+              borderRadius:24,
+              fontSize:13,
+              fontWeight:500,
+              border: features.includes(f) ? 'none' : '1.5px solid #E2EDD4',
+              background: features.includes(f) ? '#2D5016' : 'white',
+              color: features.includes(f) ? '#C8E6A0' : '#1C2B1A',
+              cursor:'pointer',
+              display:'flex',
+              alignItems:'center',
+              gap:6,
+              boxShadow: features.includes(f) ? '0 2px 8px rgba(45,80,22,0.3)' : '0 1px 3px rgba(28,43,26,0.06)',
+              transition:'all 0.15s',
+            }}>
+              {FEATURE_CONFIG[f].emoji} {FEATURE_CONFIG[f].label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* CTA */}
+      <button onClick={handleSearch} style={{
+        width:'100%',
+        background:'linear-gradient(135deg, #E8622A 0%, #c94d1a 100%)',
+        color:'white',
+        border:'none',
+        borderRadius:16,
+        padding:'17px',
+        fontSize:16,
+        fontWeight:700,
+        cursor:'pointer',
+        display:'flex',
+        alignItems:'center',
+        justifyContent:'center',
+        gap:10,
+        boxShadow:'0 4px 20px rgba(232,98,42,0.4)',
+        letterSpacing:'0.2px',
+      }}>
+        🔍 Search all Ontario Parks
       </button>
     </div>
   )
